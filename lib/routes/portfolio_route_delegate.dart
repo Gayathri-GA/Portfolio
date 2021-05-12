@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/routes/no_transition.dart';
 import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/routes/portfolio_route_path.dart';
 import 'package:portfolio/screens/home/homescreen.dart';
@@ -12,7 +13,6 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
   bool show404 = false;
 
   List<Portfolio> pages = [
-    Portfolio('About'),
     Portfolio('Youtube'),
     Portfolio('Blogs'),
     Portfolio('Tech Talks'),
@@ -34,6 +34,7 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
   Widget build(BuildContext context) {
     return Navigator(
       key: navigatorKey,
+      transitionDelegate: NoAnimationTransitionDelegate(),
       pages: [
         MaterialPage(
           key: ValueKey('Portfolio'),

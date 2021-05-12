@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/routes/portfolio.dart';
+import 'package:portfolio/screens/about/about.dart';
 import 'package:portfolio/screens/home/widgets/menu_item.dart';
 import 'package:portfolio/screens/home/widgets/nav_bar_mobile.dart';
 import 'package:portfolio/utils/size_utils.dart';
@@ -63,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                AboutSection()
               ],
             ),
           )
@@ -95,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
+                    AboutSection()
                   ],
                 ),
                 AnimatedContainer(
