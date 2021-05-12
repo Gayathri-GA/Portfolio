@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/routes/portfolio.dart';
-import 'package:portfolio/screens/about/about.dart';
 import 'package:portfolio/screens/home/widgets/menu_item.dart';
 import 'package:portfolio/screens/home/widgets/nav_bar_mobile.dart';
 import 'package:portfolio/utils/size_utils.dart';
@@ -8,10 +7,7 @@ import 'package:portfolio/utils/size_utils.dart';
 class HomeScreen extends StatefulWidget {
   final List<Portfolio> pageName;
   final ValueChanged<Portfolio> showPage;
-  HomeScreen({
-    @required this.pageName,
-    @required this.showPage,
-  });
+  HomeScreen({@required this.pageName, @required this.showPage});
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -19,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   double menuHeight = 0.0;
   IconData menuIcon = Icons.menu;
-  Widget descriptionWidget = AboutSection();
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -55,7 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                       MenuItem(
                                         menuItem: pageTitle.page,
                                         onTap: () {
-                                          descriptionWidget = pageTitle.pageName;
                                           widget.showPage(pageTitle);
                                         },
                                       )
@@ -69,7 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                descriptionWidget
               ],
             ),
           )
@@ -102,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    //widget.portfolioPage
                   ],
                 ),
                 AnimatedContainer(

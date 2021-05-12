@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class AboutSection extends StatefulWidget {
+  final Portfolio portfolio;
+  AboutSection({@required this.portfolio});
   @override
   _AboutSectionState createState() => _AboutSectionState();
 }

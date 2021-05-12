@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/routes/portfolio_route_path.dart';
-import 'package:portfolio/screens/about/about.dart';
-import 'package:portfolio/screens/blogs/blogs.dart';
 import 'package:portfolio/screens/home/homescreen.dart';
-import 'package:portfolio/screens/open_source/open_source.dart';
-import 'package:portfolio/screens/tech_talks/tech_talks.dart';
-import 'package:portfolio/screens/youtube/youtube.dart';
+import 'package:portfolio/screens/home/portfolio_description.dart';
 
 class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<PortfolioRoutePath> {
@@ -16,11 +12,11 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
   bool show404 = false;
 
   List<Portfolio> pages = [
-    Portfolio(AboutSection(), 'About'),
-    Portfolio(Youtube(), 'Youtube'),
-    Portfolio(Blogs(), 'Blogs'),
-    Portfolio(TechTalks(), 'Tech Talks'),
-    Portfolio(OpenSource(), 'Open Source Contribution')
+    Portfolio('About'),
+    Portfolio('Youtube'),
+    Portfolio('Blogs'),
+    Portfolio('Tech Talks'),
+    Portfolio('Open Source Contribution')
   ];
 
   PortfolioRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>();
@@ -46,6 +42,7 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
             showPage: _handlePageTapped,
           ),
         ),
+        if (_selectedPage != null) PortfolioDescription(portfolio: _selectedPage)
       ],
       onPopPage: (route, result) {
         if (!route.didPop(result)) {
