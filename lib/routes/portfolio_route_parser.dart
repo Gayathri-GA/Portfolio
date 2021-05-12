@@ -10,9 +10,9 @@ class PortfolioRouteInformationParser extends RouteInformationParser<PortfolioRo
       return PortfolioRoutePath.home();
     }
 
-    // Handle '/portfolio/:id'
+    // Handle '//:id'
     if (uri.pathSegments.length == 2) {
-      if (uri.pathSegments[0] != 'porfoliopage') return PortfolioRoutePath.unknown();
+      if (uri.pathSegments[0] != 'portfolio') return PortfolioRoutePath.unknown();
       var remaining = uri.pathSegments[1];
       var id = int.tryParse(remaining);
       if (id == null) return PortfolioRoutePath.unknown();

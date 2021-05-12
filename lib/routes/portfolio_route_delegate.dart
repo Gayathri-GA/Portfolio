@@ -30,7 +30,7 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
       return PortfolioRoutePath.unknown();
     }
     return _selectedPage == null
-        ? SizedBox()
+        ? PortfolioRoutePath.home()
         : PortfolioRoutePath.details(pages.indexOf(_selectedPage));
   }
 
@@ -44,7 +44,6 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
           child: HomeScreen(
             pageName: pages,
             showPage: _handlePageTapped,
-            portfolioPage: _selectedPage.pageName,
           ),
         ),
       ],
@@ -57,7 +56,6 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
         _selectedPage = null;
         show404 = false;
         notifyListeners();
-
         return true;
       },
     );
@@ -76,7 +74,6 @@ class PortfolioRouterDelegate extends RouterDelegate<PortfolioRoutePath>
         show404 = true;
         return;
       }
-
       _selectedPage = pages[path.id];
     } else {
       _selectedPage = null;
