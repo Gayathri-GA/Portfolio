@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:portfolio/routes/portfolio.dart';
+import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class Blogs extends StatefulWidget {
-  // final Portfolio portfolio;
-  // Blogs({@required this.portfolio});
+  final Portfolio portfolio;
+  Blogs({@required this.portfolio});
   @override
   _BlogsState createState() => _BlogsState();
 }
