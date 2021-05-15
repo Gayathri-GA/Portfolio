@@ -34,13 +34,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Gayathri Devi',
-                            style: TextStyle(
-                              fontSize: 30.toFont,
-                              color: Color(0xff000080),
+                          Container(
+                            width: 90.toWidth,
+                            height: 90.toHeight,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/logo.png'), fit: BoxFit.contain),
                             ),
                           ),
+                          // Text(
+                          //   'G',
+                          //   style: TextStyle(
+                          //     fontSize: 36.toFont,
+                          //     color: Color(0xff000080),
+                          //   ),
+                          // ),
                           Column(
                             children: [
                               Container(
@@ -84,13 +92,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Gayathri Devi',
-                                style: TextStyle(
-                                  fontSize: 36.toFont,
-                                  color: Color(0xff000080),
+                              Container(
+                                width: 110.toWidth,
+                                height: 110.toHeight,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/logo.png'), fit: BoxFit.contain),
                                 ),
                               ),
+                              // Text(
+                              //   'G',
+                              //   style: TextStyle(
+                              //     fontSize: 60.toFont,
+                              //     color: Color(0xff000080),
+                              //   ),
+                              // ),
                               navMenuButton(50)
                             ],
                           ),
