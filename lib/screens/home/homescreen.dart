@@ -1,26 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/screens/about/about.dart';
+import 'package:portfolio/screens/blogs/blogs.dart';
 import 'package:portfolio/screens/home/widgets/menu_item.dart';
 import 'package:portfolio/screens/home/widgets/nav_bar_mobile.dart';
+import 'package:portfolio/screens/open_source/open_source.dart';
+import 'package:portfolio/screens/tech_talks/tech_talks.dart';
+import 'package:portfolio/screens/youtube/youtube.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class HomeScreen extends StatefulWidget {
-  final List<Portfolio> pageName;
-  final ValueChanged<Portfolio> showPage;
-  HomeScreen({@required this.pageName, @required this.showPage});
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ScrollController scrollController = new ScrollController();
   double menuHeight = 0.0;
   IconData menuIcon = Icons.menu;
+  var pageTitle = ['About', 'Youtube', 'Blogs', 'Tech Talks', 'Open Source Contribution'];
+  final List pageList = [AboutSection(), Youtube(), Blogs(), TechTalks(), OpenSource()];
+  void containerSize() {
+    setState(() {
+      menuIcon = Icons.menu;
+      menuHeight = 0.0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return (SizeConfig().screenWidth > 1000)
         ? Scaffold(
+            backgroundColor: Colors.white,
             body: Column(
               children: [
                 Container(
@@ -54,15 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Container(
                                 width: SizeConfig().screenWidth / 1.8,
                                 child: Row(
-                                  children: [
-                                    for (var pageTitle in widget.pageName)
-                                      MenuItem(
-                                        menuItem: pageTitle.page,
-                                        onTap: () {
-                                          widget.showPage(pageTitle);
-                                        },
-                                      )
-                                  ],
+                                  children: [navBarLandscape(scrollController)],
                                 ),
                               ),
                             ],
@@ -72,7 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                AboutSection()
+                Container(
+                    width: SizeConfig().screenWidth,
+                    height: SizeConfig().screenHeight - 100.toHeight,
+                    color: Colors.white,
+                    child: ListView.builder(
+                        controller: scrollController,
+                        physics: BouncingScrollPhysics(),
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return pageList[index];
+                        }))
               ],
             ),
           )
@@ -113,7 +126,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    AboutSection()
+                    Container(
+                        width: SizeConfig().screenWidth,
+                        height: SizeConfig().screenHeight - 130.toHeight,
+                        color: Colors.white,
+                        child: ListView.builder(
+                            controller: scrollController,
+                            physics: BouncingScrollPhysics(),
+                            itemCount: 5,
+                            itemBuilder: (context, index) {
+                              return pageList[index];
+                            }))
                   ],
                 ),
                 AnimatedContainer(
@@ -123,23 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: menuHeight,
                   width: double.infinity,
                   color: Color(0xff000080),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        for (var pageHeading in widget.pageName)
-                          NavBarItem(
-                            menuItem: pageHeading.page,
-                            onTap: () {
-                              setState(() {
-                                menuIcon = Icons.menu;
-                                menuHeight = 0.0;
-                              });
-                              widget.showPage(pageHeading);
-                            },
-                          )
-                      ],
-                    ),
-                  ),
+                  child: SingleChildScrollView(child: navBarPortrait(scrollController)),
                 ),
               ],
             ),
@@ -173,6 +180,95 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget navBarPortrait(ScrollController scrollController) {
+    return Column(
+      children: [
+        NavBarItem('About', 1, () {
+          containerSize();
+          scrollController.animateTo(
+            scrollController.position.minScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        NavBarItem('Youtube', 2, () {
+          containerSize();
+          scrollController.animateTo(
+            0.25 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        NavBarItem('Blogs', 3, () {
+          containerSize();
+          scrollController.animateTo(
+            0.50 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        NavBarItem('Tech Talks', 4, () {
+          containerSize();
+          scrollController.animateTo(
+            0.75 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        NavBarItem('Open Source Contribution', 5, () {
+          containerSize();
+          scrollController.animateTo(
+            1 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+      ],
+    );
+  }
+
+  Widget navBarLandscape(ScrollController scrollController) {
+    return Row(
+      children: [
+        MenuItem('About', 1, () {
+          scrollController.animateTo(
+            scrollController.position.minScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        MenuItem('Youtube', 2, () {
+          scrollController.animateTo(
+            0.25 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        MenuItem('Blogs', 3, () {
+          scrollController.animateTo(
+            0.50 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        MenuItem('Tech Talks', 4, () {
+          scrollController.animateTo(
+            0.75 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+        MenuItem('Open Source Contribution', 5, () {
+          scrollController.animateTo(
+            1 * scrollController.position.maxScrollExtent,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }),
+      ],
     );
   }
 }

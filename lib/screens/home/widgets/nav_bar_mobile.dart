@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class NavBarItem extends StatefulWidget {
   final String menuItem;
+  final int position;
   final Function onTap;
-  NavBarItem({this.menuItem, this.onTap});
+  NavBarItem(this.menuItem, this.position, this.onTap);
 
   @override
   _NavBarItemState createState() => _NavBarItemState();

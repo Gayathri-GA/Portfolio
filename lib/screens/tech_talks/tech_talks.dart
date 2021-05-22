@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class TechTalks extends StatefulWidget {
-  final Portfolio portfolio;
-  TechTalks({@required this.portfolio});
   @override
   _TechTalksState createState() => _TechTalksState();
 }

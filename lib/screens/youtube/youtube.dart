@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/routes/portfolio.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class Youtube extends StatefulWidget {
-  final Portfolio portfolio;
-  Youtube({@required this.portfolio});
   @override
   _YoutubeState createState() => _YoutubeState();
 }

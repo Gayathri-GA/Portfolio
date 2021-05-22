@@ -14,7 +14,7 @@ class _AboutSectionState extends State<AboutSection> {
     return (SizeConfig().screenWidth > 1000)
         ? Container(
             width: SizeConfig().screenWidth,
-            height: SizeConfig().screenHeight - 100.toHeight,
+            height: SizeConfig().screenHeight - 90.toHeight,
             color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +81,7 @@ class _AboutSectionState extends State<AboutSection> {
                         alignment: Alignment.bottomCenter,
                         children: [
                           Container(
-                            height: SizeConfig().screenHeight / 2.8,
+                            height: SizeConfig().screenHeight / 3.4,
                             width: SizeConfig().screenWidth,
                             decoration: new BoxDecoration(
                               color: Color(0xff000080),
@@ -100,7 +100,7 @@ class _AboutSectionState extends State<AboutSection> {
                                   'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png'),
                               // backgroundImage: NetworkImage(
                               //     'https://cdn.hashnode.com/res/hashnode/image/upload/v1617111315341/R5m5XIFLQ.jpeg?w=500&h=500&fit=crop&crop=entropy&auto=compress'),
-                              radius: 180.toFont,
+                              radius: 160.toFont,
                             ),
                           )
                         ],

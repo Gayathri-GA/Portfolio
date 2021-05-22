@@ -3,8 +3,9 @@ import 'package:portfolio/utils/size_utils.dart';
 
 class MenuItem extends StatelessWidget {
   final String menuItem;
+  final int position;
   final Function onTap;
-  MenuItem({this.menuItem, this.onTap});
+  MenuItem(this.menuItem, this.position, this.onTap);
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
