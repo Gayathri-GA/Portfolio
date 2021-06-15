@@ -39,7 +39,11 @@ class _AboutDescriptionState extends State<AboutDescription> {
                       padding: EdgeInsets.only(left: 40.toWidth),
                       child: Text(
                         'I\'m Gayathri Devi',
-                        style: TextStyle(color: Color(0xff000080), fontSize: 50.toFont),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'Roboto-Bold',
+                            color: Color(0xff000080),
+                            fontSize: 50.toFont),
                       ),
                     ),
                   ],

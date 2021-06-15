@@ -5,7 +5,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Itim-Regular'),
+      theme: ThemeData(fontFamily: 'Roboto-Bold'),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );

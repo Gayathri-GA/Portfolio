@@ -47,10 +47,7 @@ class _AboutSectionState extends State<AboutSection> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                    'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png'),
-                                // backgroundImage: NetworkImage(
-                                //     'https://cdn.hashnode.com/res/hashnode/image/upload/v1617111315341/R5m5XIFLQ.jpeg?w=500&h=500&fit=crop&crop=entropy&auto=compress'),
+                                backgroundImage: AssetImage('assets/gayu.png'),
                                 radius: 200.toFont,
                               )
                             ],
@@ -96,10 +93,7 @@ class _AboutSectionState extends State<AboutSection> {
                           Padding(
                             padding: EdgeInsets.only(bottom: 200.toHeight),
                             child: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png'),
-                              // backgroundImage: NetworkImage(
-                              //     'https://cdn.hashnode.com/res/hashnode/image/upload/v1617111315341/R5m5XIFLQ.jpeg?w=500&h=500&fit=crop&crop=entropy&auto=compress'),
+                              backgroundImage: AssetImage('assets/gayu.png'),
                               radius: 160.toFont,
                             ),
                           )
