@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/about/about.dart';
-import 'package:portfolio/screens/blogs/blogs.dart';
 import 'package:portfolio/screens/home/widgets/menu_item.dart';
 import 'package:portfolio/screens/home/widgets/nav_bar_mobile.dart';
+import 'package:portfolio/screens/investments/investment.dart';
 import 'package:portfolio/screens/open_source/open_source.dart';
 import 'package:portfolio/screens/tech_talks/tech_talks.dart';
 import 'package:portfolio/screens/youtube/youtube.dart';
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double menuHeight = 0.0;
   IconData menuIcon = Icons.menu;
   var pageTitle = ['About', 'Youtube', 'Blogs', 'Tech Talks', 'Open Source Contribution'];
-  final List pageList = [AboutSection(), Youtube(), Blogs(), TechTalks(), OpenSource()];
+  final List pageList = [AboutSection(), Youtube(), TechTalks(), OpenSource(), Investment()];
   void containerSize() {
     setState(() {
       menuIcon = Icons.menu;
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
             curve: Curves.ease,
           );
         }),
-        NavBarItem('Youtube', 2, () {
+        NavBarItem('Youtube&Blogs', 2, () {
           containerSize();
           scrollController.animateTo(
             0.25 * scrollController.position.maxScrollExtent,
@@ -240,28 +240,28 @@ class _HomeScreenState extends State<HomeScreen> {
             curve: Curves.ease,
           );
         }),
-        MenuItem('Youtube', 2, () {
+        MenuItem('Youtube & Blogs', 2, () {
           scrollController.animateTo(
             0.25 * scrollController.position.maxScrollExtent,
             duration: Duration(milliseconds: 500),
             curve: Curves.ease,
           );
         }),
-        MenuItem('Blogs', 3, () {
+        MenuItem('Tech Talks', 3, () {
           scrollController.animateTo(
             0.50 * scrollController.position.maxScrollExtent,
             duration: Duration(milliseconds: 500),
             curve: Curves.ease,
           );
         }),
-        MenuItem('Tech Talks', 4, () {
+        MenuItem('Open Source', 4, () {
           scrollController.animateTo(
             0.75 * scrollController.position.maxScrollExtent,
             duration: Duration(milliseconds: 500),
             curve: Curves.ease,
           );
         }),
-        MenuItem('Open Source Contribution', 5, () {
+        MenuItem('Investment Portfolio', 5, () {
           scrollController.animateTo(
             1 * scrollController.position.maxScrollExtent,
             duration: Duration(milliseconds: 500),

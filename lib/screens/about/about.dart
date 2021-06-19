@@ -47,7 +47,11 @@ class _AboutSectionState extends State<AboutSection> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CircleAvatar(
-                                backgroundImage: AssetImage('assets/gayu.png'),
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                  'assets/aboutgayu.png',
+                                  fit: BoxFit.cover,
+                                ),
                                 radius: 200.toFont,
                               )
                             ],
@@ -93,7 +97,8 @@ class _AboutSectionState extends State<AboutSection> {
                           Padding(
                             padding: EdgeInsets.only(bottom: 200.toHeight),
                             child: CircleAvatar(
-                              backgroundImage: AssetImage('assets/gayu.png'),
+                              backgroundColor: Colors.white,
+                              backgroundImage: AssetImage('assets/aboutgayu.png'),
                               radius: 160.toFont,
                             ),
                           )

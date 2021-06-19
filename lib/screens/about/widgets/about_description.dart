@@ -59,7 +59,7 @@ class _AboutDescriptionState extends State<AboutDescription> {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                             color: Color(0xff000080).withOpacity(0.8),
-                            fontSize: 22.toFont,
+                            fontSize: 18.toFont,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -72,10 +72,12 @@ class _AboutDescriptionState extends State<AboutDescription> {
                       padding: EdgeInsets.only(left: 27.toWidth, top: 30.toHeight),
                       width: SizeConfig().screenWidth / 2.2,
                       child: Text(
-                        'I am an enthusiastic coder interested in learning new things and exploring new places. I am good in public speaking and taking presentation,webinars.Passionate on building mobile applications.',
+                        'I am an enthusiastic coder interested in learning new things and exploring new places. I am good in public speaking and taking presentation,webinars.  Youtuber at \'Talk to Grow\'.Passionate on building mobile applications and solving real world problems.',
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                            color: Color(0xff000080).withOpacity(0.7), fontSize: 24.toFont),
+                            fontFamily: 'Lato',
+                            color: Color(0xff000080).withOpacity(0.7),
+                            fontSize: 16.toFont),
                       ),
                     ),
                   ],
@@ -136,7 +138,7 @@ class _AboutDescriptionState extends State<AboutDescription> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xff000080).withOpacity(0.8),
-                            fontSize: 22.toFont,
+                            fontSize: 20.toFont,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -152,7 +154,9 @@ class _AboutDescriptionState extends State<AboutDescription> {
                         'I am an enthusiastic coder interested in learning new things and exploring new places. I am good in public speaking and taking presentation,webinars.Passionate on building mobile applications.',
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                            color: Color(0xff000080).withOpacity(0.7), fontSize: 18.toFont),
+                            fontFamily: 'Lato',
+                            color: Color(0xff000080).withOpacity(0.7),
+                            fontSize: 17.toFont),
                       ),
                     ),
                   ],

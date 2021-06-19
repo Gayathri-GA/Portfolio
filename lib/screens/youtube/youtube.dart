@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/youtube/blogs.dart';
+import 'package:portfolio/screens/youtube/channel.dart';
 import 'package:portfolio/utils/size_utils.dart';
 
 class Youtube extends StatefulWidget {
@@ -14,7 +16,17 @@ class _YoutubeState extends State<Youtube> {
         ? Container(
             width: SizeConfig().screenWidth,
             height: SizeConfig().screenHeight - 100.toHeight,
-            color: Colors.blue,
+            color: Colors.white,
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Channel(),
+                    SectionBlog(),
+                  ],
+                ),
+              ],
+            ),
           )
         : Container(
             width: SizeConfig().screenWidth,

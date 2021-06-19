@@ -23,9 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cached_network_image:
   cupertino_icons: ^1.0.2
-  url_launcher: ^6.0.3
-
+  flutter_cache_manager:
+  flutter_link_preview:
+  http:
+  url_launcher:
+  any_link_preview: ^1.0.8
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,7 +51,21 @@ flutter:
     - assets/github.png
     - assets/linkedin.png
     - assets/twitter.png
-    - assets/gayu.png
+    - assets/aboutgayu.png
+    - assets/channellogo.png
+    - assets/quote.png
+    - assets/firstvideo.png
+    - assets/secondvideo.png
+    - assets/subscribe.png
+    - assets/b1.png
+    - assets/b2.png
+    - assets/b3.png
+    - assets/b4.png
+    - assets/b5.jpeg
+    - assets/b6.jpeg
+    - assets/git.gif
+    - assets/stock.gif
+    - assets/talk.gif
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -73,9 +91,12 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
-    - family: Itim-Regular
-      fonts:
-        - asset: fonts/Itim-Regular.ttf
     - family: Roboto-Bold
       fonts:
         - asset: fonts/Roboto-Bold.ttf
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
+    - family: Nunito
+      fonts:
+        - asset: fonts/Nunito-Black.ttf
